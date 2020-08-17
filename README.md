@@ -10,6 +10,7 @@ This is how it works:
 
 ## Requirements:
 
+```
 certifi==2020.6.20
 chardet==3.0.4
 click==7.1.2
@@ -27,3 +28,4 @@ spotipy==2.13.0
 twilio==6.44.1
 urllib3==1.25.9
 werkzeug==1.0.1
+```
