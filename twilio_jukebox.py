@@ -343,9 +343,3 @@ def get_song_info_from_genius(api_path, base_url, headers):
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-# Errors:
-# 1. When typing any other word when expected more, nothing happens, the
-# session['results'] fills incorrectly and tries to send a bigger message than
-# whatsapp allows.
