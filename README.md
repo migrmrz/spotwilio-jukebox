@@ -4,4 +4,6 @@ A digital jukebox with Python, Twilio, Flask, Spotify and Genius where you can s
 
 This is how it works:
 
-![Spotwilio jukebox](.github/images/IMG-0459.gif)
+<p align="center">
+  <img src=".github/images/IMG-0459.gif">
+</p>
