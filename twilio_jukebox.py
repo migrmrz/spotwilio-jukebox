@@ -2,15 +2,14 @@ from twilio.twiml.messaging_response import MessagingResponse
 from flask import Flask, request, session
 from spotipy.oauth2 import SpotifyOAuth
 import spotipy
-import secrets
 import os
 import requests
 from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-secret_key = secrets.token_hex(16)
-app.secret_key = secret_key
+
+app.secret_key = os.environ.get("FLASK_APP_SECRET")
 
 
 @app.route("/jukebox", methods=['GET', 'POST'])
