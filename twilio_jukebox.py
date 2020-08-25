@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_APP_SECRET")
 
 
-@app.route("/jukebox", methods=['GET', 'POST'])
+@app.route("/jukebox", methods=['POST'])
 def jukebox():
     """
     Chatbot's main logic
