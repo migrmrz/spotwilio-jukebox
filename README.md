@@ -1,8 +1,6 @@
 # Spotwilio jukebox
 
-A digital jukebox with Python, Twilio, Flask, Spotify and Genius where you can search music and then add it to a playlist.
-
-Uses <a href="https://github.com/plamere/spotipy">spotipy</a>
+A digital jukebox with Python, Twilio, Flask, Spotify and Genius where you can search music and then add it to a playlist. Uses <a target="_blank" rel="noopener noreferrer" href="https://github.com/plamere/spotipy">spotipy</a>.
 
 This is how it works:
 
