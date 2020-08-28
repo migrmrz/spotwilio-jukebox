@@ -96,7 +96,7 @@ def jukebox():
         else:
             add_song_to_playlist(selected_song_uri)
             help_message = "Great! The song _{}_ has been added to the " \
-                "playlist. Thank you and have fun!".format(selected_song_name)
+                "playlist. Have fun!".format(selected_song_name)
             fun_fact = get_fun_fact(selected_song_name, selected_song_artist)
             session.clear()
         resp_messages.append(help_message)
@@ -199,7 +199,10 @@ def search(search_str, offset_val=0, results=[]):
     """
     spotify = create_spotify_client()
     api_results = spotify.search(
-        q=search_str, limit=8, market="MX", offset=offset_val
+        q=search_str,
+        limit=8,
+        market=os.environ.get("SPOTIFY_MARKET"),
+        offset=offset_val
     )
     items = api_results['tracks']['items']
     next = api_results['tracks']['next']
@@ -237,8 +240,7 @@ def get_playlist_songs():
     spotify = create_spotify_client()
     results = spotify.user_playlist(
         user=os.environ.get("SPOTIPY_CLIENT_USERNAME"),
-        playlist_id="spotify:user:{}:playlist:2zNMgSnwlCDBQFL8s7eA8z".
-        format(os.environ.get("SPOTIPY_CLIENT_USERNAME"))
+        playlist_id=os.environ.get("SPOTIFY_PLAYLIST_URI")
     )
     items = results['tracks']['items']
 
@@ -253,8 +255,7 @@ def add_song_to_playlist(uri):
 
     spotify.user_playlist_add_tracks(
         user=os.environ.get("SPOTIPY_CLIENT_USERNAME"),
-        playlist_id="spotify:user:{}:playlist:2zNMgSnwlCDBQFL8s7eA8z"
-        .format(os.environ.get("SPOTIPY_CLIENT_USERNAME")),
+        playlist_id=os.environ.get("SPOTIFY_PLAYLIST_URI"),
         tracks=[uri])
 
     return spotify
